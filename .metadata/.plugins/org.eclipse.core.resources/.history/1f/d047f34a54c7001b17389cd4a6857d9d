@@ -1,0 +1,27 @@
+package com.concert.model;
+
+public class Info {
+/**
+ * 공연예매 프로그램 공연정보 도메인 클래스
+ * 1. infoCode	: 공연 코드
+ * 2. infoName	: 공연 이름
+ * 3. infoDate	: 공연 날짜
+ * 4. infoTime	: 공연 시간	
+ * 5. infoFemaleActor	: 여자 배우
+ * 6. infoMaleActor		: 남자 배우
+ */
+	private String infoCode;
+	private String infoName;
+	private String infoDate;
+	private String infoTime;
+	private String infoFemaleActor;
+	private String infoMaleActor;
+//	공연정보 : infoCode, infoName, infoDate, infoTime, infoFemaleActor, infoMaleActor
+//	1. play_001, 뮤지컬 더 리퍼, 6/12, 19:30 ~ 22:00, 문채원, 송중기
+//	2. paly_002, 옥탑방 고양이,  6/19, 20:00 ~ 22:00, 남정은, 이경민
+//	3. paly_003, 피카츄의 대모험, 6/26, 19:30 ~ 21:30, 소니아, 금랑
+//	4. play_004, 낫아웃, 7/3. 20:00 ~ 22:30, 송이재, 정재광
+//	5. play_005, 행복, 7/10, 19:30 ~ 21:30 김단율, 정영성
+	
+	
+}

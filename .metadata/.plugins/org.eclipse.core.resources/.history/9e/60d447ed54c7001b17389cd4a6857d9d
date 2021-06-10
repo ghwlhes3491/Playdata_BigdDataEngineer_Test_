@@ -1,0 +1,15 @@
+package com.concert.service;
+
+import java.util.ArrayList;
+
+
+public class InfoService {
+
+	/** 회원들을 저장관리하기 위한 자료 저장구조 : Generic */
+	private ArrayList<Member> list = new ArrayList<Member>();
+
+	/** 기본생성자 : 초기화 회원 등록 수행 */
+	public MemberService() {}	
+	
+	/**
+}

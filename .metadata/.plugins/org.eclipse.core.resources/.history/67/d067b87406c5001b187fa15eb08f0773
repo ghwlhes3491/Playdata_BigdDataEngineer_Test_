@@ -1,0 +1,54 @@
+package com.concert.model;
+
+/**
+ * <pre>
+ * 공연예매 프로그램 회원 도메인 클래스 
+ * ## 회원 검증 조건 
+ * 1. memberId 아이디 
+ * 2. memberPw 비밀번호
+ * 3. memberName 이름
+ * 4. mobile 휴대폰
+ * 5. email 이메일
+ * 6. money 캐시 
+ * </pre>
+ */
+public class Member {
+	/** 아이디, 식별키 */
+	private String MemberId;
+	/** 비밀번호, 필수 */
+	private String MemberPw;
+	/** 이름, 필수 */
+	private String name;
+	/** 휴대폰, 필수, 형식 01012341234 */
+	private String mobile;
+	/** 이메일, 필수 */
+	private String email;
+	/** 캐시, 필수? 관리자는??null??? */
+	private String money;
+	/**
+	 * @param memberId
+	 * @param memberPw
+	 * @param name
+	 * @param mobile
+	 * @param email
+	 * @param money
+	 */
+	/**
+	 * 
+	 */
+	public Member() {
+		
+	}
+	public Member(String memberId, String memberPw, String name, String mobile, String email, String money) {
+		super();
+		MemberId = memberId;
+		MemberPw = memberPw;
+		this.name = name;
+		this.mobile = mobile;
+		this.email = email;
+		this.money = money;
+	}
+
+	
+	
+}

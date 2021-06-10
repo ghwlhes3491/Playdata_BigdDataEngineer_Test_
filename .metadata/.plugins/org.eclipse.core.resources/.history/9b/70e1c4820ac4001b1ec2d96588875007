@@ -1,0 +1,28 @@
+package com.work.exception;
+
+
+public class UserExceptionTest {
+	public static void main(String[] args) {
+		//doA("G"); // static 메서드인 main()메서드는 같은 클래스에 있는 인스턴스 메서드 객체 생성후 사용 가능.
+		UserExceptionTest a = new UserExceptionTest();
+		a.doA("s");
+		
+	}
+	/**
+	 * -- grade "G","S","A"가 아니면 사용자예외(UserException) 발생
+	 * -- throw new 사용자예외클래스명()
+	 * @param grade
+	 */
+	public void doA(String grade) {
+		//if(grade.equals("G")||grade.equals("S")||grade.equals("A")) { //!써야하나?
+		switch(grade) {
+		case "G":
+		case "S":
+		case "A":
+			break;
+		default:
+			System.out.println("[오류] 등급은 G, S, A만 가능합니다.");
+			//throw new UserException("G, S, A 중 하나로 입력하세요.");
+		}
+	}
+}

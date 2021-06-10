@@ -1,0 +1,28 @@
+package com.work.view;
+
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class FileInputOutputTest {
+
+	public static void main(String[] args) {
+		// 키보드로 입력 => 파일("test.text") 출력
+		// 키보드 입력 스트림 : 라인 단위
+		BufferedReader in = null;
+		FileWriter writer = null;
+		// 파일("test.text") 출력 : 라인 단위
+		try {
+			in = new BufferedReader(new InputStreamReader(System.in));
+			writer = new FileWriter("test.txt");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			
+		}
+		
+
+	}
+
+}

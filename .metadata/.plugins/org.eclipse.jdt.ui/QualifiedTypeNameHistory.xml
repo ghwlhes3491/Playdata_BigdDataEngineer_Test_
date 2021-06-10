@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.work.model.service.StudentScoreService"/>
+    <fullyQualifiedTypeName name="com.work.model.dto.StudentScore"/>
+    <fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.Class.Member"/>
+    <fullyQualifiedTypeName name="com.work.model.dto.GeneralMember"/>
+    <fullyQualifiedTypeName name="com.work.model.dto.SpecialMember"/>
+    <fullyQualifiedTypeName name="com.work.model.dto.AdminMember"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.util.Locale"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.work.model.service.MemberService"/>
+    <fullyQualifiedTypeName name="com.work.util.Utility"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.concert.service.MemberService"/>
+    <fullyQualifiedTypeName name="com.concert.model.Member"/>
+    <fullyQualifiedTypeName name="com.concert.model.Info"/>
+    <fullyQualifiedTypeName name="com.sun.java_cup.internal.runtime.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,19 @@
+package com.work.view;
+
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.InputStreamReader;
+
+public class FileInputOutputTest {
+
+	public static void main(String[] args) {
+		// 키보드로 입력 => 파일("test.text") 출력
+		// 키보드 입력 스트림 : 라인 단위
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		
+		// 파일("test.text") 출력 : 라인 단위
+		FileWriter writer = new FileWriter():
+
+	}
+
+}

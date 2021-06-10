@@ -1,0 +1,11 @@
+package com.work.view;
+
+public class GuGuDanTest {
+	//for구문 활용
+	for(int i =2; i<=9 ; i++) {
+		System.out.println(i+"단\t");
+		
+	}
+	
+
+}

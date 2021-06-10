@@ -1,0 +1,186 @@
+package com.work.view;
+
+import java.util.ArrayList;
+
+import com.work.exception.DuplicateException;
+import com.work.exception.RecordNotFoundException;
+import com.work.model.dto.Member;
+import com.work.model.service.MemberService;
+
+public class Test {
+	/**
+	 * 회원관리 시스템 테스트 메서드
+	 * -- 회원등록(아이디, 비밀번호, 이름, 휴대폰, 이메일) : 사용자 입력
+	 * -- Service(model) : 사용자입력정보 + 시스템(가입일 - 현재날짜, 등급 - 일반회원 [, + 마일리지 정책 가입시 1000])
+	 * @param args 시작 시에 전달받은 메서드 
+	 * @throws DuplicateException 
+	 */
+	public static void main(String[] args) {
+		// 선행초기화
+		print("회원관리 서비스 이용위한 객체 생성");
+		MemberService service = new MemberService();
+		
+		System.out.println();
+		try {
+			print("초기화 회원 등록 : " + service.initMember());
+		} catch (DuplicateException e) {
+			System.out.println(e.getMessage());
+		}
+		print("회원등록");
+		try {
+			service.addMember("test01", "password01","테스터1","01010001000","test01@work.com");
+			service.addMember("test02", "password02","테스터2","01020002000","test02@work.com");
+			
+			//중복오류발생
+			service.addMember("test01", "password01","테스터1","01010001000","test01@work.com");
+			
+			//회원 추가 등록 : 위에있는 코드에서 수행시 예외가 발생하면 catch처리로 이동하고 다시 돌아오지 않음.(수행되지않음!!!주의!!!)
+			//service.addMember("test03", "password03","테스터3","01010003000","test03@work.com");
+		} catch (DuplicateException e) {
+			System.out.println(e.getMessage());
+		}
+
+		
+		print("현재 등록 회원수 :" + service.getCount());
+		
+		print("전체회원 조회 ");
+		ArrayList list = service.getMember();
+		for(int index = 0; index < list.size(); index++) {
+			System.out.println(list.get(index));
+		}
+		
+		print("회원 상세 조회 : user01");
+		
+		//Member dto;	//지역변수는 사용전에 반드시 명시적으로 초기화 설정
+		Member dto = null;
+		try {
+			dto = service.getMember("user01");
+		} catch (RecordNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+
+		
+		print("회원 상세 조회 : 신규 등록 회원 - test01");
+		try {
+			dto = service.getMember("user01");
+			System.out.println(dto);
+		} catch (RecordNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+
+		
+		print("변경 전 user01 정보 : "+ dto);
+//		dto = new GeneralMember("user01","","","","");
+		
+		
+		try {
+			dto = service.getMember("user01");
+		} catch (RecordNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		//변경하고자하는 속성 setter 이용해서 변경
+		dto.setName("김은경");
+		dto.setMemberPw("happy2021");
+		dto.setMobile("010-2222-3333");
+		
+		// 변경수행
+		print("변경");
+		boolean result = false;
+		service.setMember(dto);
+		
+		try {
+			dto =service.getMember("user01");
+			print("변경 후 user01 정보 : "+ dto);
+		} catch (RecordNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+		
+
+		service.setMember(dto);
+		
+		//변경객체 : invalid - 없는 아이디 회원 변경
+		print("미존재 회원 아이디 변경");
+		dto = new Member("xxxx", "password01", "홍길동", "01012341000", "user01@work.com", "2020-12-15", "G", 50000, null);
+		
+		result = service.setMember(dto);
+	
+		try {
+			System.out.println(service.getMember("xxxx"));
+		} catch (RecordNotFoundException e) {
+			System.out.println("xxxx아이디 회원정보가 존재하지 않습니다.");
+			System.out.println(e.getMessage());
+		}
+
+		//비밀번호 변경
+		print("비밀번호 변경 전 조회 : ");
+		try {
+			dto = service.getMember("user02");
+		} catch (RecordNotFoundException e) {
+			System.out.println(e.getMessage());
+		} 
+		System.out.println(dto);
+		
+		//비밀번호 변경 : vaild, invaild(아이디존재, 또는 비밀번호오류인 경우 모두 테스트해야함)
+		print("비밀번호 변경 ");
+		try {
+			dto = service.getMember("user02");
+			System.out.println("비밀번호가 정상 변경처리 되었습니다.");
+		} catch (RecordNotFoundException e) {
+			System.out.println("[오류] 회원의 정보를 다시 확인하시기 바랍니다.");
+			System.out.println(e.getMessage());
+		} 
+		System.out.println(dto);
+		
+		print("user01");
+		try {
+			System.out.println(service.getMember("user01"));
+		} catch (RecordNotFoundException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		dto = service.removeMember("user01","happy2021");
+		if(dto != null) {
+			System.out.println("[탈퇴성공]" + dto.getName() + "님 그동안 서비스를 이용해주셔서 감사합니다.");
+		}else {
+			System.out.println("[탈퇴실패] 회원의 정보를 다시 획인하시기바랍니다.");
+		}
+		
+		
+	}
+	/**
+	 * 회원관리 시스템 테스트 메서드
+	 * @param args 시작시에 전달받은 메서드 
+	 */
+	public static void main1(String[] args) {
+		Member dto1 = new Member("user01", "password01", "홍길동", "01012341000", "user01@work.com", "2020-12-15", "G", 50000, null);
+		Member dto2 = new Member("user02", "password02", "강감찬", "01012342000", "user02@work.com", "2021-01-05", "G", 950000, null);
+		Member dto3 = new Member("user03", "password03", "이순신", "01012343000", "user03@work.com", "2020-11-15", "S", 0, "강동원");
+		Member dto4 = new Member("user04", "password04", "김유신", "01012344000", "user04@work.com", "2021-01-05", "S", 0,"김하린");
+		Member dto5 = new Member("administrator", "admin1004", "유관순", "01012345000", "administrator@work.com", "2020-04-01", "A");
+	
+
+		print("회원관리 서비스 이용위한 객체 생성");
+		MemberService service = new MemberService();
+
+		print("회원등록");
+		/*
+		service.addMember(dto1);
+		service.addMember(dto2);
+		service.addMember(dto3);
+		service.addMember(dto4);
+		service.addMember(dto5);
+		
+		service.addMember(dto2); 
+		service.addMember(dto3); 
+		service.addMember(dto4); 
+		 */
+		print("등록인원수 : " + service.getCount());
+	}
+	
+	/** 테스트시에 출력위한 메서드 */
+	public static void print(String message) {
+		System.out.println("\n### " + message);
+	}
+	
+}

@@ -1,0 +1,12 @@
+package com.work.map;
+
+import java.util.HashMap;
+
+public class MapTest {
+	public static void main(String[] args) {
+		//회원들을 저장.관리하기 위한 HashMap<K,V>
+		//회원식별속성 : 아이디 => Map의 key
+		//HashAMap 객체 선언 및 생성
+		HashMap<Member> map = new HashMap<Member>();
+	}
+}

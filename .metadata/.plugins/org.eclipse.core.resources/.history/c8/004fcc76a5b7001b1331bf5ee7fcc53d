@@ -1,0 +1,29 @@
+package com.work.view;
+
+public class LoopTest {
+/*
+	public static void main1(String[] args) {
+		//for 구문을 이용해서 1~10까지 출력하면서 누적된 결과를 출력해보세요
+		int sum=0;
+
+		for(int i = 1; i <= 10; i++) {
+			if (i % 2 == 0) {	//짝수 누적 : 2로 나누었을 때 나머지 값 이용
+			sum+=i;
+			System.out.println(i);
+			}
+		}
+		System.out.printf("누적 결과 : %d\n", sum);
+	}
+	*/
+	public static void main(String[] args) {
+		/* 실습 : 영문 대문자에 대한 'ascii code'를 출력하는 프로그램 작성
+		 *  hint : 알파벳은 총 26자, type casting이용
+		 */
+		char ahp='Z';
+		for(int i=(int)'A';i<=(int)ahp;i++) {
+			System.out.printf("%c : %\d",ahp,(int)i);
+			
+		}
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.concert.model;
+
+/**
+ * <pre>
+ * 공연예매 프로그램 회원 도메인 클래스 
+ * ## 회원 검증 조건 
+ * 1. memberId 아이디 
+ * 2. memberPw 비밀번호
+ * 3. memberName 이름
+ * 4. mobile 휴대폰
+ * 5. email 이메일
+ * 6. money 캐시 
+ * </pre>
+ */
+public class Member {
+	private String MemberId;
+	private String MemberPw;
+	private String name;
+	private String mobile;
+	private String email;
+	private String money;
+}

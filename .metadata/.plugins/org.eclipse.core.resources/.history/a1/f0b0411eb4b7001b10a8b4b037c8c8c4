@@ -1,0 +1,84 @@
+package com.work.view;
+
+public class GuGuDanTest {
+	//1. for구문을 활용한 구구단
+	public static void main1(String[] args) {
+
+		for(int i = 2; i <= 9 ; i++) {
+			System.out.print(i+"단\t\t");
+		}
+		System.out.println();
+			
+		for(int i = 1; i <= 9 ; i++) {
+			for(int j=2;j<=9 ; j++) {
+				int result=j*i;
+				System.out.print(j+" * "+i +" = "+result+"\t");
+			}System.out.println();
+		}
+		
+	}
+	//2.while을 활용한 구구단
+	public static void main2(String[] args) {
+		int i = 2;
+		while(i <= 9) {
+			
+			System.out.print(i+"단\t\t");
+			i++;
+		}
+		System.out.println();
+		
+		i = 1; int j = 2;
+		while(i<=9) {
+			j=2;
+			while(j<=9) {
+				int result=j*i;
+				System.out.print(j+" * "+i +" = "+result+"\t");
+				j++;
+			}
+			System.out.println();
+			i++;
+		}
+
+	
+	}
+	
+	//3. do_while을 이용한 구구단 
+	public static void main(String[] args) {
+		int i = 2;
+		
+		//단 부분
+		do {
+			System.out.print(i+"단\t\t");
+			i++;
+		}
+		while(i <= 9) ;
+		System.out.println();
+		
+		
+		//내용 부분
+		i = 0; int j = 2;
+		int result = j * i;
+		do {
+			j=2;
+			do {  // j*i순임
+				
+				System.out.print(j+" * "+i +" = "+result+"\t");
+				j++;
+			}
+			while(j<=9);
+			
+		System.out.println();
+		i++;
+		}
+		
+		while(i<=9);
+		
+ 
+
+
+	
+	}
+	
+	
+}
+

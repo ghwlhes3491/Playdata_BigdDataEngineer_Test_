@@ -1,0 +1,22 @@
+package com.work.view;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class IOMemberTest {
+
+	public static void main(String[] args) {
+
+	
+	// 객체생성없이 사용가능한 메서드
+	// 키보드로부터 읽은 데이터를 문자열로 반환하는 메서드
+	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));	
+	String input = in.readLine();
+
+	// 객체생성없이 사용가능한 메서드
+	// 키보드로부터 읽은 데이터를  int로 반환하는 메서드
+	int out = 0;
+	out = Integer.parseInt((String)System.in);
+	
+	}
+}

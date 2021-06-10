@@ -1,0 +1,8 @@
+package com.concert.exception;
+
+public class Exception {
+	public void exception() {
+		
+	}
+	
+}

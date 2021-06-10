@@ -1,0 +1,17 @@
+package com.work.exception;
+
+public class UserExceptionTest {
+	public static void main(String[] args) {
+		
+	}
+	/**
+	 * -- grade "G","S","A"가 아니면 사용자예외(UserException) 발생
+	 * -- throw new 사용자예외클래스명()
+	 * @param grade
+	 */
+	public void doA(String grade) {
+		if(grade.equals("G")||grade.equals("S")||grade.equals("A")) {
+			throw new IOException("G,S,A중 한ㅏ만 입력하세요");
+		}
+	}
+}

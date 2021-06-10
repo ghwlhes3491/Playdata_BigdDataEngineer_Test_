@@ -1,0 +1,34 @@
+package com.work.view;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class IOMemberTest {
+
+	public static void main(String[] args) {
+		System.out.println("아이디 : ");
+		String memverId = inputString();
+	
+	// 객체생성없이 사용가능한 메서드
+
+	// 키보드로부터 읽은 데이터를 문자열로 반환하는 메서드
+	public static String inputString() {
+		String data = null;
+		try {
+			BufferedReader in = new BufferedReader(new InputStreamReader(System.in));	
+			data = in.readLine();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return data;
+	}
+	// 객체생성없이 사용가능한 메서드
+	// 키보드로부터 읽은 데이터를  int로 반환하는 메서드
+	/*
+	String inn = null;
+	int out = 0;
+	out = Integer.parseInt(inn);
+	*/
+	}
+}

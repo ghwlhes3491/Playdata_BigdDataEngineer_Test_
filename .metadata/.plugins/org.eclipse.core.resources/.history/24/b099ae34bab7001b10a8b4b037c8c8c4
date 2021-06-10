@@ -1,0 +1,144 @@
+package com.work.view;
+
+public class GuGuDanTest {
+	//1. for구문을 활용한 구구단
+	public static void main1(String[] args) {
+
+		for(int i = 2; i <= 9 ; i++) {
+			System.out.print(i+"단\t\t");
+		}
+		System.out.println();
+			
+		for(int i = 1; i <= 9 ; i++) {
+			for(int j=2;j<=9 ; j++) {
+				int result=j*i;
+				System.out.print(j+" * "+i +" = "+result+"\t");
+			}System.out.println();
+		}
+		
+	}
+	//2.while을 활용한 구구단
+	public static void main2(String[] args) {
+		int i = 2;
+		while(i <= 9) {
+			
+			System.out.print(i+"단\t\t");
+			i++;
+		}
+		System.out.println();
+		
+		i = 1; int j = 2;
+		while(i<=9) {
+			j=2;
+			while(j<=9) {
+				int result=j*i;
+				System.out.print(j+" * "+i +" = "+result+"\t");
+				j++;
+			}
+			System.out.println();
+			i++;
+		}
+
+	
+	}
+	
+	//3. do_while을 이용한 구구단  ★★★좀 걸렸음
+	public static void main3(String[] args) {
+		int i = 2;
+		
+		//단 부분
+		do {
+			System.out.print(i+"단\t\t");
+			i++;
+		}
+		while(i <= 9) ;
+		System.out.println();
+		
+		
+		//내용 부분
+		i = 1; int j = 2;
+		int result = j * i;
+		do {
+			j=2;
+			do {  // j*i순
+				
+				System.out.print(j+" * "+i +" = "+result+"\t");
+				j++;
+			}
+			while(j<=9);
+			
+		System.out.println();
+		i++;
+		}
+		
+		while(i<=9);
+
+	}
+	
+	//4. -- 	4. 반복문을 활용하여 짝수 구구단만 출력	
+											//2단	4단	....	8단
+	public static void main4(String[] args) {
+		//단 부분
+		for(int i = 2; i<=9 ; i++) {
+			if(i%2==0) {
+			System.out.print(i+"단\t\t");
+			}
+		}
+		System.out.println();
+		
+		//내용 부분 // j*i순
+		int i=0,j=0;
+		
+		
+		for(i = 1;i<= 9 ; i++) {
+				j=2;
+				
+				for(j = 2; j<= 9 ; j++) {
+					
+					if(j%2==0) {
+						int result = j * i;
+						System.out.print(j+" * "+i +" = "+result+"\t");
+					}
+
+
+				}
+				System.out.println();
+		
+	}
+}
+	// 5. 반복문을 활용하여 홀수 스텝의 구구단만 출력해보세요	
+	public static void main(String[] args) {
+		//내용 부분
+		for(int i = 2; i<=9 ; i++) {
+			System.out.print(i+"단\t\t");
+		}
+		System.out.println();
+		
+		/*
+		2단		3단	......	9단
+		2*1=2	3*1=3		9*1=9
+		2*3=6	3*3=9		9*3=27
+		..
+		..
+		2*9=18	3*9=27		9*9=81
+		*/
+	//내용 부분 // j*i순 // i 부분이 바뀌어야함.
+	int i=0,j=2;
+	for(i=1; i<=9; i++) {
+		
+		if(i%2 == 1) {
+			for (j=2;j<=9;j++) {
+				int result = j * i;
+				System.out.print(j+" * "+i +" = "+result+"\t");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+	
+
+
+	
+	}
+}
+

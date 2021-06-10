@@ -1,0 +1,42 @@
+package com.work.view;
+
+public class IfTest {
+	public static void main1(String[] args) {
+		//성적을 변수에 저장
+		int score = 65;
+		
+		// 성적이 70점 이상이면 합격 출력, 70점 미만이면 불합격 출력
+		if (score>=70) {	//이상이므로 >=
+			System.out.println("성적은 "+score+"점 합격입니다");
+		}else {
+			System.out.println("성적은 "+score+"점 불합격입니다.");
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		/*	여러줄 주석
+		 * 성적에 따라 등급을 출력하는 프로그램 완성
+		 * 성적은 0 ~ 100점이내
+		 */
+		int score = 95;
+		if(score >= 0 & score<=100) {	//invalid한 것까지 체크해야 함
+			if(score>=90) {
+				//System.out.println(score+"점 A등급");	// %d점 %f등급 
+				System.out.printf("%d점 %c등급", score, 'A');
+			}else if (score>=80) {
+				System.out.println(score+"점 B등급");
+			}else if (score>=70) {
+				System.out.println(score+"점 C등급");
+			}else if (score>=60) {
+				System.out.println(score+"점 D등급");
+			}else {
+				System.out.println(score+"점 F등급");
+			}
+			
+		}else {
+			System.out.println("[오류] 성적은 0 ~ 100점 입니다. : "+ score);
+		}
+	}
+
+}
